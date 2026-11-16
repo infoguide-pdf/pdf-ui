@@ -70,6 +70,9 @@
     padding:10px;
   }
 
+  .cfg-img{display:block;width:100%;height:220px;object-fit:cover;background:#e8e8e8;border-radius:12px;margin:18px 0}
+  @media (min-width:640px){.cfg-img{height:300px}}
+
   /* Cards */
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0}
   .card{background:#ffffff;border:1px solid #d8d8d8;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.08);text-align:center}
@@ -181,7 +184,7 @@
     <p class="sub">और वो <b>₹2,000–₹5,000 प्रति घंटा</b> खुद देती हैं।<br>और तुम अभी भी ₹15,000 की नौकरी में फँसे हो? क्यों?</p>
 
     <!-- Image Placeholder 1: Hero Visual -->
-    <div class="img-placeholder">Primary Image 1</div>
+    <img class="cfg-img" data-key="hero" alt="Primary Image 1">
 
     <a href="#join" class="cta">अभी ₹199 में सिस्टम एक्सेस करो<small>तुरंत शुरू • कोई हिडन चार्ज नहीं</small></a>
   </div>
@@ -337,7 +340,7 @@
     </div>
 
     <!-- Image Placeholder 3 -->
-    <div class="img-placeholder">Primary Image 3</div>
+    <img class="cfg-img" data-key="proof" alt="Primary Image 3">
   </div>
 </section>
 
@@ -381,6 +384,12 @@
 fetch('config.json')
   .then(r => r.json())
   .then(cfg => {
+    document.querySelectorAll('img[data-key]').forEach(el => {
+      const entry = (cfg.images || {})[el.dataset.key];
+      if (!entry) return;
+      el.src = entry.src;
+      if (entry.alt) el.alt = entry.alt;
+    });
     const box = document.getElementById('cards');
     (cfg.cards || []).forEach(c => {
       const card = document.createElement('div');

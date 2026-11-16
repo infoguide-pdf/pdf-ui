@@ -1,4 +1,14 @@
 {
+  "images": {
+    "hero": {
+      "src": "https://picsum.photos/seed/hero/1200/600",
+      "alt": "Primary Image 1"
+    },
+    "proof": {
+      "src": "https://picsum.photos/seed/proof/1200/600",
+      "alt": "Primary Image 3"
+    }
+  },
   "cards": [
     {
       "image": "https://picsum.photos/seed/card1/600/450",
