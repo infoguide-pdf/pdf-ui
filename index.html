@@ -186,7 +186,7 @@
     <!-- Image Placeholder 1: Hero Visual -->
     <img class="cfg-img" data-key="hero" alt="Primary Image 1">
 
-    <a href="#join" class="cta" data-cta>अभी ₹199 में सिस्टम एक्सेस करो<small>तुरंत शुरू • कोई हिडन चार्ज नहीं</small></a>
+    <a href="#join" class="cta">अभी ₹199 में सिस्टम एक्सेस करो<small>तुरंत शुरू • कोई हिडन चार्ज नहीं</small></a>
   </div>
 </div>
 
@@ -349,7 +349,7 @@
     <div class="urgency">⚠️ ₹199 का ऑफर सिर्फ सीमित समय के लिए — आज ही खत्म हो सकता है</div>
     <h2>50,000+ लोगों की Life बदली…<br><span>अब तुम्हारी बारी है!</span></h2>
     <p style="color:#555555;margin-bottom:26px;font-size:16px">₹199 में Elite Companion System एक्सेस करो। 90% छूट।<br>तुरंत शुरू • पूरा सिस्टम + Bonuses</p>
-    <a href="#" class="cta" data-cta>अभी Join करो — ₹199<small>तुरंत एक्सेस • कोई हिडन चार्ज नहीं</small></a>
+    <a href="#" class="cta">अभी Join करो — ₹199<small>तुरंत एक्सेस • कोई हिडन चार्ज नहीं</small></a>
     <div class="boxes">
       <span>🔒 100% सिक्योर पेमेंट</span>
       <span>⚡ इंस्टेंट एक्सेस</span>
@@ -375,7 +375,7 @@
 
 <!-- Sticky Pulsing Join Button -->
 <div class="sticky-cta">
-  <a href="#" class="pulse-btn" data-cta>अभी ₹199 में Join करो</a>
+  <a href="#" class="pulse-btn">अभी ₹199 में Join करो</a>
   <span class="subtext">⚠️ ऑफर सीमित समय के लिए • आज ही खत्म हो सकता है</span>
 </div>
 
@@ -384,9 +384,6 @@
 fetch('config.json')
   .then(r => r.json())
   .then(cfg => {
-    if (cfg.ctaUrl) {
-      document.querySelectorAll('a[data-cta]').forEach(a => { a.href = cfg.ctaUrl; });
-    }
     document.querySelectorAll('img[data-key]').forEach(el => {
       const entry = (cfg.images || {})[el.dataset.key];
       if (!entry) return;
