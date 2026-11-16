@@ -1,27 +1,27 @@
 {
   "images": {
     "hero": {
-      "src": "https://picsum.photos/seed/hero/1200/600",
+      "src": "https://lh3.googleusercontent.com/d/1DLmfII-5Y5pyXeo4uC_anouYe9wuvkb3",
       "alt": "Primary Image 1"
     },
     "proof": {
-      "src": "https://picsum.photos/seed/proof/1200/600",
+      "src": "https://lh3.googleusercontent.com/d/1yQTrtld1lxFWx7-VVuqsauRhmJTYSpoM",
       "alt": "Primary Image 3"
     }
   },
   "cards": [
     {
-      "image": "https://picsum.photos/seed/card1/600/450",
+      "image": "https://lh3.googleusercontent.com/d/1F3UXEEEuKzzOdXIIJf3QmVn7wGC8Hyox",
       "title": "☀️ आराम की सुबह",
       "description": "सुबह 10 बजे उठो,\nकोई 7 AM का अलार्म नहीं,\nअपनी मर्ज़ी का रूटीन"
     },
     {
-      "image": "https://picsum.photos/seed/card2/600/450",
+      "image": "https://lh3.googleusercontent.com/d/1SaaV2Z6iIB6-iEIavfG9OjKN3cE9QE1E",
       "title": "💬 प्राइवेट वीडियो कॉल",
       "description": "शांत, प्राइवेट बातचीत,\nसामने वाला अपनी मर्ज़ी से सुन रहा है,\nकोई दबाव नहीं"
     },
     {
-      "image": "https://picsum.photos/seed/card3/600/450",
+      "image": "https://lh3.googleusercontent.com/d/1cn1KkF7v-DY9d0zZ3COIRBHKqcK69fBg",
       "title": "🏠 घर में इज़्ज़त",
       "description": "मम्मी के हाथ में पैसे,\nपापा की आँखों में गर्व,\nरिश्तेदारों के सवाल बंद"
     }
