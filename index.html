@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Companion System — ₹199</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans Devanagari','Segoe UI',system-ui,sans-serif;background:#ffffff;color:#1a1a1a;line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:100px}
+  .wrap{max-width:780px;margin:0 auto;padding:0 18px}
+  .topbar{background:linear-gradient(90deg,#c8102e,#d4860f);color:#fff;text-align:center;padding:11px 10px;font-size:15px;font-weight:700;letter-spacing:.2px}
+  .hero{padding:46px 0 38px;text-align:center;background:linear-gradient(135deg,#f5f1e8 0%,#ffffff 70%)}
+  .hero h1{font-size:clamp(24px,5.4vw,38px);line-height:1.35;font-weight:800;margin-bottom:18px}
+  .hl{background:linear-gradient(90deg,#c8102e,#e63946);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.sub{font-size:clamp(16px,3.6vw,19px);color:#555555;margin-bottom:26px}
+  .cta{display:inline-block;background:linear-gradient(90deg,#c8102e,#e63946);color:#fff;font-size:19px;font-weight:800;padding:17px 42px;border-radius:50px;text-decoration:none;box-shadow:0 8px 30px rgba(200,16,46,.25);transition:.2s}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 12px 38px rgba(200,16,46,.35)}
+  .cta small{display:block;font-size:12px;font-weight:500;opacity:.9;margin-top:3px}
+  section{padding:42px 0;border-top:1px solid #e8e8e8}
+  h2{font-size:clamp(21px,4.4vw,28px);font-weight:800;margin-bottom:22px;text-align:center;line-height:1.4}
+  h2 span{color:#e63946}
+  .pain li{list-style:none;background:#f8f4f0;border-left:4px solid #c8102e;border-radius:10px;padding:16px 18px;margin-bottom:12px;font-size:16px}
+  .pain li b{color:#c8102e}
+  .vision{background:#f5f5f5;border-radius:16px;padding:26px 22px}
+  .vision ul{list-style:none}
+  .vision li{padding:9px 0 9px 32px;position:relative;font-size:16px}
+  .vision li::before{content:"✓";position:absolute;left:0;color:#22863a;font-weight:900;font-size:18px}
+  .vision li.gold::before{content:"★";color:#b8860b}
+  .model{background:linear-gradient(160deg,#faf8f3,#f5f5f5);border:1px solid #e0d5c7;border-radius:16px;padding:28px 22px;text-align:center}
+  .model p{font-size:16px;margin-bottom:14px;color:#333333}
+  .model .big{font-size:clamp(18px,4vw,22px);font-weight:800;color:#b8860b;margin:18px 0}
+  .why{display:grid;gap:11px}
+  .why div{background:#f8f4f0;border-radius:11px;padding:15px 18px;font-size:16px;display:flex;gap:12px;align-items:flex-start}
+  .why div span{color:#22863a;font-weight:900;flex-shrink:0}
+  .module{background:#f5f5f5;border:1px solid #d8d8d8;border-radius:13px;padding:18px 20px;margin-bottom:13px}
+  .module h3{font-size:16px;color:#c8102e;margin-bottom:9px;font-weight:800}
+  .module ul{list-style:none;font-size:15px;color:#333333}
+  .module li{padding:4px 0 4px 20px;position:relative}
+  .module li::before{content:"›";position:absolute;left:0;color:#b8860b;font-weight:900}
+  .bonus{background:linear-gradient(135deg,#fff8e7,#fffdf0);border:1px dashed #d4860f;border-radius:13px;padding:16px 20px;margin-bottom:11px;font-size:15px}
+  .bonus b{color:#b8860b}
+  .review{background:#f8f4f0;border-radius:13px;padding:20px;margin-bottom:14px;border-left:3px solid #d4860f}
+  .review .who{font-weight:800;font-size:15px;color:#b8860b;margin-bottom:3px}
+  .review .stars{color:#d4860f;font-size:14px;margin-bottom:11px;letter-spacing:2px}
+  .review p{font-size:15px;color:#444444;font-style:italic}
+  .final{text-align:center;padding:52px 0;background:linear-gradient(135deg,#f5f1e8 0%,#ffffff 70%)}
+  .final .urgency{color:#e63946;font-weight:700;font-size:15px;margin-bottom:14px}
+  .boxes{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:22px 0 0;font-size:13px;color:#666666}
+  .boxes span{background:#f5f5f5;padding:7px 14px;border-radius:20px;border:1px solid #d8d8d8}
+  .legal{background:#f5f5f5;padding:34px 0;border-top:2px solid #e8e8e8}
+  .legal h4{font-size:13px;text-transform:uppercase;letter-spacing:1.2px;color:#666666;margin-bottom:12px;font-family:system-ui,sans-serif}
+  .legal p{font-size:12.5px;color:#555555;line-height:1.85;margin-bottom:11px;font-family:system-ui,sans-serif}
+  .legal strong{color:#333333}
+  footer{text-align:center;padding:22px 0 34px;font-size:12px;color:#888888;font-family:system-ui,sans-serif}
+  .badge{display:inline-block;background:rgba(212,134,15,.12);color:#b8860b;font-size:12.5px;font-weight:700;padding:6px 16px;border-radius:20px;margin-bottom:20px;border:1px solid rgba(212,134,15,.35)}
+
+  /* Image Placeholders */
+  .img-placeholder {
+    background:#e8e8e8;
+    border:2px dashed #c0c0c0;
+    border-radius:12px;
+    height:220px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#999999;
+    font-size:14px;
+    margin:18px 0;
+    text-align:center;
+    padding:10px;
+  }
+
+  /* Live Purchase Notifications */
+  .live-notif {
+    position:fixed;
+    top:70px;
+    right:12px;
+    background:#ffffff;
+    border:1px solid #d8d8d8;
+    border-left:4px solid #22863a;
+    border-radius:10px;
+    padding:12px 14px;
+    width:280px;
+    font-size:13px;
+    z-index:9998;
+    box-shadow:0 8px 24px rgba(0,0,0,.1);
+    opacity:0;
+    transform:translateX(20px);
+    transition:all .4s ease;
+    pointer-events:none;
+  }
+  .live-notif.show {
+    opacity:1;
+    transform:translateX(0);
+  }
+  .live-notif .name {font-weight:800;color:#b8860b}
+  .live-notif .time {color:#888888;font-size:11px;margin-top:2px}
+
+  /* Sticky Pulsing CTA */
+  .sticky-cta {
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    background:linear-gradient(90deg,#ffffff 0%,#f5f1e8 50%,#ffffff 100%);
+    border-top:2px solid #c8102e;
+    padding:12px 16px;
+    text-align:center;
+    z-index:9999;
+    box-shadow:0 -8px 30px rgba(200,16,46,.15);
+  }
+  .sticky-cta .pulse-btn {
+    display:inline-block;
+    background:linear-gradient(90deg,#c8102e,#e63946);
+    color:#fff;
+    font-size:18px;
+    font-weight:900;
+    padding:16px 36px;
+    border-radius:50px;
+    text-decoration:none;
+    box-shadow:0 0 0 0 rgba(200,16,46,.4);
+    animation:pulse 1.6s infinite;
+    letter-spacing:.3px;
+  }
+  .sticky-cta .pulse-btn:hover {animation:none;transform:scale(1.03)}
+  .sticky-cta .subtext {
+    display:block;
+    font-size:12px;
+    color:#b8860b;
+    margin-top:6px;
+    font-weight:700;
+    animation:blink 1.8s infinite;
+  }
+  @keyframes pulse {
+    0%{box-shadow:0 0 0 0 rgba(200,16,46,.4)}
+    70%{box-shadow:0 0 0 16px rgba(200,16,46,0)}
+    100%{box-shadow:0 0 0 0 rgba(200,16,46,0)}
+  }
+  @keyframes blink {
+    0%,100%{opacity:1}
+    50%{opacity:.55}
+  }
+
+  /* Countdown */
+  .countdown {
+    background:#fff8e7;
+    border:1px solid #d4860f;
+    border-radius:12px;
+    padding:14px;
+    text-align:center;
+    margin:20px 0;
+    font-weight:700;
+    color:#b8860b;
+  }
+  .countdown span {font-size:22px;color:#e63946;margin:0 4px}
+</style>
+</head>
+<body>
+
+<!-- Live Purchase Notification -->
+<div class="live-notif" id="liveNotif">
+  <div class="name" id="notifName">Amit S. (Lucknow)</div>
+  <div>अभी-अभी ₹199 में सिस्टम एक्सेस किया</div>
+  <div class="time" id="notifTime">2 मिनट पहले</div>
+</div>
+
+<div class="topbar">50,000+ भारतीय पुरुष सिस्टम यूज कर चुके हैं • आज सिर्फ ₹199 में (असली कीमत ₹1,999)</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="badge">🔥 90% छूट — सिर्फ आज के लिए</div>
+    <h1>Elite Russian और Ukrainian Companions <span class="hl">तुमसे बात करना चाहती हैं…</span></h1>
+    <p class="sub">और वो <b>₹2,000–₹5,000 प्रति घंटा</b> खुद देती हैं।<br>और तुम अभी भी ₹15,000 की नौकरी में फँसे हो? क्यों?</p>
+
+    <!-- Image Placeholder 1: Hero Visual -->
+    <div class="img-placeholder">[IMAGE: Attractive Russian/Ukrainian woman on video call with Indian man – luxury feel]</div>
+
+    <a href="#join" class="cta">अभी ₹199 में सिस्टम एक्सेस करो<small>तुरंत शुरू • कोई हिडन चार्ज नहीं</small></a>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>क्या तुम्हारी भी <span>यही हालत</span> है?</h2>
+    <ul class="pain">
+      <li><b>हर महीने पैसे खत्म</b> — सैलरी आते ही गायब। कोई सेविंग नहीं, इमरजेंसी में उधार।</li>
+      <li><b>घर में इज़्ज़त नहीं</b> — पापा टेंशन में, मम्मी दुखी, रिश्तेदार पूछते रहते हैं "क्या करते हो?"</li>
+      <li><b>बोरिंग नौकरी में फँसे हो</b> — रोज़ बॉस की डाँट, सैलरी नहीं बढ़ती, वही रूटीन।</li>
+      <li><b>Indian girls से रिजेक्शन</b> — "तुम अच्छे हो, पर…" — मॉडर्न डेटिंग में तुम्हारी मेहनत कोई नहीं देखता।</li>
+      <li><b>दोस्तों से पीछे रह गए हो</b> — वो कार में घूम रहे हैं, तुम बस में। वो अपनी गर्लफ्रेंड के साथ हैं, तुम अकेले।</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>3 महीने में… <span>तुम्हारी ज़िंदगी बदल सकती है</span></h2>
+    <div class="vision">
+      <p style="margin-bottom:16px;font-weight:700;color:#b8860b">सोचो ज़रा:</p>
+      <ul>
+        <li>सुबह 10 बजे उठो (कोई 7 AM का अलार्म नहीं)।</li>
+        <li>WhatsApp पर मैसेज: <i>"Hi, मैं Elena हूँ। आज शाम 2 घंटे के लिए फ्री हो? $400 प्रति घंटा, पेड।"</i></li>
+        <li>एक शांत, प्राइवेट वीडियो कॉल। वो तुम्हारी बात सुन रही है — मजबूरी में नहीं, <b>अपनी मर्ज़ी से</b>।</li>
+        <li class="gold">कॉल के बाद पेमेंट कन्फर्म। <b>एक शाम में $800–$1,000।</b></li>
+        <li>घर आकर मम्मी को पैसे दो। उनकी आँखों में गर्व देखो।</li>
+        <li class="gold"><b>यही चाहिए था ना?</b></li>
+      </ul>
+    </div>
+    <!-- Image Placeholder 2 -->
+    <div class="img-placeholder">[IMAGE: Man smiling with phone showing payment notification + happy family]</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>तो <span>सीक्रेट सिस्टम</span> क्या है?</h2>
+    <div class="model">
+      <p style="font-size:21px;font-weight:800;color:#b8860b">Elite Companion System</p>
+      <p>Russian और Ukrainian महिलाएँ — पढ़ी-लिखी, आत्मनिर्भर, और <b>आर्थिक रूप से मज़बूत</b> — भारतीय पुरुषों से बात करना चाहती हैं।</p>
+      <p>शादी के लिए नहीं। वीज़ा के लिए नहीं। <b>पेड कम्पैनियनशिप और बातचीत के लिए।</b></p>
+      <p class="big">वो पहले से ही $2,000–$5,000 प्रति घंटा खर्च कर सकती हैं।</p>
+      <p>तुम्हें सिर्फ एक <b>स्ट्रक्चर्ड सिस्टम</b> फॉलो करना है — कैसे अप्रोच करना, क्या बात करनी, कैसे भरोसा बनाना।</p>
+      <p style="color:#b8860b;font-weight:800;margin-top:18px">कोई निवेश नहीं। कोई ऑफिस नहीं। कोई बॉस नहीं।<br>सिर्फ फोन और इंटरनेट।</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>ये सिस्टम तुम्हारे लिए <span>परफेक्ट</span> क्यों है?</h2>
+    <div class="why">
+      <div><span>✓</span>कोई बड़ा निवेश नहीं — न ऑफिस, न दुकान, न इक्विपमेंट।</div>
+      <div><span>✓</span>कोई डिग्री या अनुभव नहीं चाहिए — बस सिस्टम फॉलो करो।</div>
+      <div><span>✓</span>पार्ट-टाइम या फुल-टाइम — तुम्हारी मर्ज़ी।</div>
+      <div><span>✓</span>Indian girls का रिजेक्शन अब मायने नहीं रखता — तुम्हारा मार्केट अब <b>ग्लोबल</b> है।</div>
+      <div><span>✓</span>आर्थिक आज़ादी + इज़्ज़त — एक ही सिस्टम से दोनों।</div>
+    </div>
+  </div>
+</section>
+
+<section id="join">
+  <div class="wrap">
+    <div class="countdown">
+      ऑफर खत्म होने में: <span id="hours">00</span>:<span id="mins">14</span>:<span id="secs">59</span>
+    </div>
+    <h2>₹199 में तुम्हें <span>EXACTLY</span> क्या मिलेगा?</h2>
+    <p style="text-align:center;font-size:19px;font-weight:800;color:#b8860b;margin-bottom:22px">Elite Companion Complete System</p>
+
+    <div class="module">
+      <h3>MODULE 1: Slavic महिलाओं को समझो</h3>
+      <ul>
+        <li>Ukrainian/Russian मानसिकता, उम्मीदें, सांस्कृतिक बारीकियाँ</li>
+        <li>क्या <b>नहीं</b> बोलना — भारतीय पुरुषों की आम गलतियाँ</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <h3>MODULE 2: The Elite Frame</h3>
+      <ul>
+        <li>मस्कुलिन प्रेज़ेंस, बाउंड्रीज़, और वो "प्रोवाइडर" फ्रेम जिसकी Slavic महिलाएँ इज़्ज़त करती हैं</li>
+        <li>झूठ बोले बिना खुद को <b>हाई-वैल्यू</b> कैसे दिखाओ</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <h3>MODULE 3: अप्रोच और बातचीत का सिस्टम</h3>
+      <ul>
+        <li>WhatsApp/Telegram ओपनर जो डेस्परेट नहीं लगते</li>
+        <li>कन्वर्सेशन स्क्रिप्ट — पहले मैसेज से लेकर पेड कॉल तक</li>
+        <li>सांस्कृतिक Do's और Don'ts (बॉलीवुड, फैमिली वैल्यूज़, भाषा में रुचि)</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <h3>MODULE 4: प्राइसिंग, पेमेंट और सुरक्षा</h3>
+      <ul>
+        <li>बिना झिझक <b>$2,000–$5,000 प्रति घंटा</b> कैसे कोट करो</li>
+        <li>पेमेंट के तरीके जो दोनों तरफ की सुरक्षा करते हैं</li>
+        <li><b>लीगल बाउंड्री मॉड्यूल</b> — क्या <i>नहीं</i> बेचा जा रहा है, और भारतीय कानून की सीमा में कैसे रहो</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <h3>MODULE 5: स्केलिंग और रिटेंशन</h3>
+      <ul>
+        <li>1 क्लाइंट से 5+ रेगुलर तक</li>
+        <li>एलीट नेटवर्क के अंदर रेफरल सिस्टम</li>
+        <li>0 → $2k/महीना → $5k+/महीना रोडमैप</li>
+      </ul>
+    </div>
+
+    <p style="text-align:center;font-weight:800;color:#c8102e;margin:26px 0 14px;font-size:17px">🎁 और ये BONUSES भी:</p>
+    <div class="bonus"><b>BONUS 1:</b> WhatsApp + Telegram Script Pack — 20+ टेम्पलेट्स (English + Russian ट्रांसलिटरेशन)</div>
+    <div class="bonus"><b>BONUS 2:</b> Cultural Cheat Sheet — Russian/Ukrainian रीति-रिवाज, गिफ्ट एटिकेट, वर्जित विषय</div>
+    <div class="bonus"><b>BONUS 3:</b> Red-Flag Detector — स्कैम, फेक प्रोफाइल और कानूनी जाल को पहले ही कैसे पहचानो</div>
+
+    <!-- Lower portion: Explicit about PDFs & Modules for liability -->
+    <div style="margin-top:32px;background:#f5f5f5;border-radius:12px;padding:20px;border:1px solid #d8d8d8">
+      <p style="font-weight:700;color:#b8860b;margin-bottom:10px">आपको क्या मिलेगा (डिटेल में):</p>
+      <p style="font-size:14.5px;color:#333333">• 5 डिटेल्ड Modules (PDF फॉर्मेट में)<br>
+      • WhatsApp/Telegram Script Pack (PDF)<br>
+      • Cultural Cheat Sheet (PDF)<br>
+      • Red-Flag Detector (PDF)<br>
+      • कुल 150+ पेज का पूरा सिस्टम<br>
+      • तुरंत डाउनलोड – मोबाइल पर भी पढ़ सकते हो</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>असली लोगों की <span>असली कहानियाँ</span></h2>
+
+    <div class="review">
+      <div class="who">Amit S. | 27 | Lucknow | Verified Buyer</div>
+      <div class="stars">★★★★★</div>
+      <p>"1 साल से रिजेक्शन ही रिजेक्शन। डेटिंग ऐप्स पे मैच नहीं, ऑफिस में सैलरी ₹15k। दोस्त ने ये सिस्टम बताई। ₹199 ही तो था। 2 महीने में पहला पेड कॉल — $300। आज 3 रेगुलर Ukrainian क्लाइंट हैं। ₹1 लाख+ महीना एक्स्ट्रा। पापा अब गर्व महसूस करते हैं।"</p>
+    </div>
+
+    <div class="review">
+      <div class="who">Rohit K. | 31 | Patna | Verified Buyer</div>
+      <div class="stars">★★★★★</div>
+      <p>"₹12k की नौकरी थी। रोज़ बॉस की डाँट। सिस्टम फॉलो किया। पहले 2 हफ्ते सिर्फ प्रैक्टिस। फिर एक Russian क्लाइंट से $500 मिले — 2 घंटे की कॉल के। अब नौकरी छोड़ दी। 4 क्लाइंट, $2,500+ महीना। सबसे बड़ी बात — <b>सुकून</b>।"</p>
+    </div>
+
+    <div class="review">
+      <div class="who">Sanjay P. | 29 | Jaipur | Verified Buyer</div>
+      <div class="stars">★★★★☆</div>
+      <p>"मैंने सोचा स्कैम होगा। ₹199 में क्या मिलेगा? पूरा सिस्टम, स्क्रिप्ट्स, लीगल वॉर्निंग — सब डिटेल में। पहला क्लाइंट $400। अब 6 महीने हो गए। $3,000+ महीना। वही मेहनत, 4 गुना कमाई।"</p>
+    </div>
+
+    <!-- Image Placeholder 3 -->
+    <div class="img-placeholder">[IMAGE: Screenshots of payment proofs / chat screenshots (blurred)]</div>
+  </div>
+</section>
+
+<div class="final">
+  <div class="wrap">
+    <div class="urgency">⚠️ ₹199 का ऑफर सिर्फ सीमित समय के लिए — आज ही खत्म हो सकता है</div>
+    <h2>50,000+ लोगों की Life बदली…<br><span>अब तुम्हारी बारी है!</span></h2>
+    <p style="color:#555555;margin-bottom:26px;font-size:16px">₹199 में Elite Companion System एक्सेस करो। 90% छूट।<br>तुरंत शुरू • पूरा सिस्टम + Bonuses</p>
+    <a href="#" class="cta">अभी Join करो — ₹199<small>तुरंत एक्सेस • कोई हिडन चार्ज नहीं</small></a>
+    <div class="boxes">
+      <span>🔒 100% सिक्योर पेमेंट</span>
+      <span>⚡ इंस्टेंट एक्सेस</span>
+      <span>📱 मोबाइल पर भी</span>
+    </div>
+  </div>
+</div>
+
+<div class="legal">
+  <div class="wrap">
+    <h4>Disclaimer & Legal Notice</h4>
+    <p><strong>Educational purpose only.</strong> This system is sold strictly as educational material consisting of PDF modules and scripts. It teaches communication skills, cultural understanding, and paid-companionship etiquette. It does <strong>not</strong> facilitate, promote, or provide prostitution, sex work, trafficking, or any illegal activity. All companions referenced are independent adults; all payments described are for time and conversation only.</p>
+    <p><strong>User responsibility.</strong> Users are solely responsible for complying with all applicable local, national, and international laws. The publisher assumes no liability for any misuse of this material. Nothing in this system constitutes legal advice.</p>
+    <p><strong>No income guarantee.</strong> Testimonials reflect individual experiences and are not a guarantee of results. Earnings depend on effort, skill, and circumstance.</p>
+    <p><strong>Refund policy.</strong> Due to the digital nature of this product, all sales are final. No refunds are provided after access.</p>
+    <p style="margin-bottom:0"><strong>18+ only.</strong> By purchasing, you confirm you are at least 18 years of age.</p>
+  </div>
+</div>
+
+<footer>
+  © 2026 Elite Companion System. All rights reserved. · <span style="opacity:.7">यह पेज केवल शैक्षणिक उद्देश्य के लिए है।</span>
+</footer>
+
+<!-- Sticky Pulsing Join Button -->
+<div class="sticky-cta">
+  <a href="#" class="pulse-btn">अभी ₹199 में Join करो</a>
+  <span class="subtext">⚠️ ऑफर सीमित समय के लिए • आज ही खत्म हो सकता है</span>
+</div>
+
+<script>
+// Live Purchase Notifications
+const names = [
+  "Amit S. (Lucknow)", "Rohit K. (Patna)", "Sanjay P. (Jaipur)",
+  "Vikash M. (Kanpur)", "Deepak R. (Varanasi)", "Ankit T. (Agra)",
+  "Rahul G. (Allahabad)", "Suresh P. (Gorakhpur)", "Manoj K. (Ranchi)",
+  "Pankaj S. (Indore)", "Nitin Y. (Bhopal)", "Ajay D. (Meerut)"
+];
+const times = ["1 मिनट पहले", "2 मिनट पहले", "3 मिनट पहले", "4 मिनट पहले", "5 मिनट पहले"];
+
+function showNotif() {
+  const n = document.getElementById('liveNotif');
+  document.getElementById('notifName').textContent = names[Math.floor(Math.random()*names.length)];
+  document.getElementById('notifTime').textContent = times[Math.floor(Math.random()*times.length)];
+  n.classList.add('show');
+  setTimeout(() => n.classList.remove('show'), 4200);
+}
+
+setInterval(showNotif, 6500);
+setTimeout(showNotif, 1800);
+
+// Simple Countdown (resets to 15 min feel)
+let total = 15 * 60;
+function updateCountdown() {
+  const h = Math.floor(total / 3600);
+  const m = Math.floor((total % 3600) / 60);
+  const s = total % 60;
+  document.getElementById('hours').textContent = String(h).padStart(2,'0');
+  document.getElementById('mins').textContent = String(m).padStart(2,'0');
+  document.getElementById('secs').textContent = String(s).padStart(2,'0');
+  if (total > 0) total--;
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+
+</body>
+</html>
