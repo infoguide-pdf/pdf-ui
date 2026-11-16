@@ -70,6 +70,14 @@
     padding:10px;
   }
 
+  /* Cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0}
+  .card{background:#ffffff;border:1px solid #d8d8d8;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.08);text-align:center}
+  .card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#e8e8e8}
+  .card h3{font-size:17px;font-weight:800;color:#1a1a1a;padding:16px 14px 8px}
+  .card p{font-size:14.5px;color:#444444;padding:0 14px 18px}
+  @media (max-width:640px){.cards{grid-template-columns:1fr}}
+
   /* Live Purchase Notifications */
   .live-notif {
     position:fixed;
@@ -206,8 +214,7 @@
         <li class="gold"><b>यही चाहिए था ना?</b></li>
       </ul>
     </div>
-    <!-- Image Placeholder 2 -->
-    <div class="img-placeholder">Primary Image 2</div>
+    <div class="cards" id="cards"></div>
   </div>
 </section>
 
@@ -370,6 +377,31 @@
 </div>
 
 <script>
+// Cards loaded from config.json
+fetch('config.json')
+  .then(r => r.json())
+  .then(cfg => {
+    const box = document.getElementById('cards');
+    (cfg.cards || []).forEach(c => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      const img = document.createElement('img');
+      img.src = c.image;
+      img.alt = c.title;
+      img.loading = 'lazy';
+      const h = document.createElement('h3');
+      h.textContent = c.title;
+      const p = document.createElement('p');
+      String(c.description).split('\n').forEach((line, i) => {
+        if (i) p.appendChild(document.createElement('br'));
+        p.appendChild(document.createTextNode(line));
+      });
+      card.append(img, h, p);
+      box.appendChild(card);
+    });
+  })
+  .catch(() => {});
+
 // Live Purchase Notifications
 const names = [
   "Amit S. (Lucknow)", "Rohit K. (Patna)", "Sanjay P. (Jaipur)",
