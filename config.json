@@ -3,13 +3,73 @@
   "salesTicker": {
     "label": "हाल की खरीदारी",
     "subLabel": "सभी चैनल",
-    "items": [],
+    "items": [
+      {
+        "name": "Rahul V.",
+        "city": "Indore",
+        "amount": "₹199",
+        "time": "1 मिनट पहले"
+      },
+      {
+        "name": "Saurabh M.",
+        "city": "Kanpur",
+        "amount": "₹199",
+        "time": "2 मिनट पहले"
+      },
+      {
+        "name": "Ankit R.",
+        "city": "Bhopal",
+        "amount": "₹199",
+        "time": "3 मिनट पहले"
+      },
+      {
+        "name": "Deepak K.",
+        "city": "Agra",
+        "amount": "₹199",
+        "time": "5 मिनट पहले"
+      },
+      {
+        "name": "Manish G.",
+        "city": "Surat",
+        "amount": "₹199",
+        "time": "2 मिनट पहले"
+      },
+      {
+        "name": "Vikas T.",
+        "city": "Ranchi",
+        "amount": "₹199",
+        "time": "6 मिनट पहले"
+      },
+      {
+        "name": "Mohit S.",
+        "city": "Noida",
+        "amount": "₹199",
+        "time": "4 मिनट पहले"
+      },
+      {
+        "name": "Pradeep Y.",
+        "city": "Nagpur",
+        "amount": "₹199",
+        "time": "7 मिनट पहले"
+      },
+      {
+        "name": "Arjun P.",
+        "city": "Pune",
+        "amount": "₹199",
+        "time": "3 मिनट पहले"
+      },
+      {
+        "name": "Vivek D.",
+        "city": "Chandigarh",
+        "amount": "₹199",
+        "time": "9 मिनट पहले"
+      }
+    ],
     "itemTemplate": {
       "name": "Initials or consented display name",
       "city": "City",
       "amount": "₹199",
-      "channel": "Source channel",
-      "date": "DD Mon YYYY"
+      "time": "minutes"
     }
   },
   "images": {
