@@ -1,30 +1,20 @@
 {
   "ctaUrl": "https://superprofile.bio/dummy-link",
-  "images": {
-    "hero": {
-      "src": "https://lh3.googleusercontent.com/d/1DLmfII-5Y5pyXeo4uC_anouYe9wuvkb3",
-      "alt": "Primary Image 1"
-    },
-    "proof": {
-      "src": "https://lh3.googleusercontent.com/d/1yQTrtld1lxFWx7-VVuqsauRhmJTYSpoM",
-      "alt": "Primary Image 3"
-    }
-  },
   "cards": [
     {
-      "image": "https://lh3.googleusercontent.com/d/1F3UXEEEuKzzOdXIIJf3QmVn7wGC8Hyox",
-      "title": "☀️ आराम की सुबह",
-      "description": "सुबह 10 बजे उठो,\nकोई 7 AM का अलार्म नहीं,\nअपनी मर्ज़ी का रूटीन"
+      "icon": "💬",
+      "title": "स्पष्ट बातचीत",
+      "description": "सम्मानजनक शुरुआत\nस्पष्ट expectations\nसक्रिय रूप से सुनना"
     },
     {
-      "image": "https://lh3.googleusercontent.com/d/1SaaV2Z6iIB6-iEIavfG9OjKN3cE9QE1E",
-      "title": "💬 प्राइवेट वीडियो कॉल",
-      "description": "शांत, प्राइवेट बातचीत,\nसामने वाला अपनी मर्ज़ी से सुन रहा है,\nकोई दबाव नहीं"
+      "icon": "🤝",
+      "title": "सीमाएँ और सहमति",
+      "description": "समय और scope तय करना\nना कहने का सम्मान\nकोई दबाव नहीं"
     },
     {
-      "image": "https://lh3.googleusercontent.com/d/1cn1KkF7v-DY9d0zZ3COIRBHKqcK69fBg",
-      "title": "🏠 घर में इज़्ज़त",
-      "description": "मम्मी के हाथ में पैसे,\nपापा की आँखों में गर्व,\nरिश्तेदारों के सवाल बंद"
+      "icon": "🛡️",
+      "title": "सुरक्षा और निजता",
+      "description": "व्यक्तिगत जानकारी की सुरक्षा\nसंदिग्ध requests पहचानना\npayment records रखना"
     }
   ]
 }
