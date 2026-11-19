@@ -26,7 +26,7 @@
   .sales-ticker__item>:not(:first-child)::before{content:"•";color:#c4dfca;margin-right:8px}
   .sales-ticker__name{font-weight:800}
   .sales-ticker__amount{color:#ffe49b;font-weight:900}
-  .sales-ticker__channel,.sales-ticker__date{color:#e4f2e7}
+  .sales-ticker__time{color:#e4f2e7}
   @keyframes sales-ticker-scroll{to{transform:translateX(-50%)}}
   .sales-ticker:hover .sales-ticker__track,.sales-ticker:focus-within .sales-ticker__track{animation-play-state:paused}
   .hero{padding:46px 0 38px;text-align:center;background:linear-gradient(135deg,#eff6ef 0%,#ffffff 75%)}
@@ -418,9 +418,9 @@ function renderSalesTicker(config) {
     return;
   }
   const items = config.items.filter(item => {
-    const requiredFields = ['name', 'city', 'amount', 'channel', 'date'];
+    const requiredFields = ['name', 'city', 'amount', 'time'];
     const valid = item && requiredFields.every(field => typeof item[field] === 'string' && item[field].trim());
-    if (!valid) console.error('config.json: each salesTicker item needs name, city, amount, channel, and date.', item);
+    if (!valid) console.error('config.json: each salesTicker item needs name, city, amount, and time.', item);
     return valid;
   });
   if (!items.length) return;
@@ -445,13 +445,10 @@ function renderSalesTicker(config) {
       const amount = document.createElement('strong');
       amount.className = 'sales-ticker__amount';
       amount.textContent = item.amount.trim();
-      const channel = document.createElement('span');
-      channel.className = 'sales-ticker__channel';
-      channel.textContent = `via ${item.channel.trim()}`;
-      const date = document.createElement('span');
-      date.className = 'sales-ticker__date';
-      date.textContent = item.date.trim();
-      entry.append(name, city, amount, channel, date);
+      const time = document.createElement('span');
+      time.className = 'sales-ticker__time';
+      time.textContent = item.time.trim();
+      entry.append(name, city, amount, time);
       group.appendChild(entry);
     });
     return group;
