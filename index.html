@@ -426,7 +426,9 @@ function renderSalesTicker(config) {
   if (!items.length) return;
 
   document.getElementById('sales-ticker-label').textContent = config.label || 'RECENT PURCHASES';
-  document.getElementById('sales-ticker-sub-label').textContent = config.subLabel || 'ALL CHANNELS';
+  const subLabel = document.getElementById('sales-ticker-sub-label');
+  subLabel.textContent = config.subLabel || '';
+  subLabel.hidden = !config.subLabel;
   const track = document.getElementById('sales-ticker-track');
   const createGroup = (isDuplicate = false) => {
     const group = document.createElement('div');
