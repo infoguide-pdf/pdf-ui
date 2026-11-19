@@ -71,14 +71,6 @@
   .faq details{background:#f4f8f4;border:1px solid #d7e5d9;border-radius:12px;padding:15px 18px}
   .faq summary{color:#256b47;font-weight:800;cursor:pointer}
   .faq p{margin:12px 0 0;color:#444}
-  .guide-marquee{overflow:hidden;background:linear-gradient(90deg,#edf5ee,#fff 50%,#edf5ee);border-bottom:1px solid #d7e5d9}
-  .marquee-track{display:flex;width:max-content;animation:guide-scroll 36s linear infinite}
-  .guide-marquee:hover .marquee-track{animation-play-state:paused}
-  .marquee-group{display:flex;flex:none;align-items:center;gap:12px;padding:10px 6px}
-  .marquee-group span{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;padding:7px 15px;border:1px solid #d7e5d9;border-radius:999px;background:#fff;color:#245a3c;font-size:14px;font-weight:700;box-shadow:0 3px 10px rgba(21,62,38,.07)}
-  .marquee-group span::before{content:"";width:8px;height:8px;flex:0 0 8px;border-radius:50%;background:linear-gradient(135deg,#68ad45,#247f08)}
-  @keyframes guide-scroll{to{transform:translateX(-50%)}}
-  @media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
 
   /* Sticky Pulsing CTA */
   .sticky-cta {
@@ -124,24 +116,6 @@
 <body>
 
 <div class="topbar">8 modules • English और हिंदी • डिजिटल गाइड • ₹199</div>
-<div class="guide-marquee" role="region" aria-label="Guide highlights">
-  <div class="marquee-track">
-    <div class="marquee-group">
-      <span>8 Modules</span>
-      <span>English / हिंदी</span>
-      <span>Conversation scripts</span>
-      <span>Boundaries and consent</span>
-      <span>Safety and privacy checklists</span>
-    </div>
-    <div class="marquee-group" aria-hidden="true">
-      <span>8 Modules</span>
-      <span>English / हिंदी</span>
-      <span>Conversation scripts</span>
-      <span>Boundaries and consent</span>
-      <span>Safety and privacy checklists</span>
-    </div>
-  </div>
-</div>
 
 <div class="hero">
   <div class="wrap">
