@@ -59,10 +59,10 @@
   section{padding:42px 0;border-top:1px solid #e8e8e8}
   h2{font-size:clamp(21px,4.4vw,28px);font-weight:800;margin-bottom:22px;text-align:center;line-height:1.4}
   h2 span{color:#256b47}
-  .pain{display:grid;gap:14px;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;padding:0}
+  .pain{display:grid;gap:18px;grid-template-columns:repeat(2,minmax(0,1fr));list-style:none;padding:0}
   .pain li{list-style:none;background:#ffffff;border:1px solid #d7e5d9;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(21,62,38,.06)}
-  .pain-illustration{display:block;width:100%;height:auto;background:#edf5ee}
-  .pain-copy{padding:14px 15px 18px}
+  .pain-photo{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#edf5ee}
+  .pain-copy{padding:16px 18px 20px}
   .pain h3{font-size:16px;line-height:1.4;color:#256b47;margin-bottom:8px}
   .pain p{font-size:14px;line-height:1.6;color:#444}
   .model{background:linear-gradient(160deg,#f1f7f1,#ffffff);border:1px solid #d5e4d7;border-radius:16px;padding:28px 22px;text-align:left}
@@ -202,53 +202,12 @@
     <h2>क्या ये चुनौतियाँ <span>जानी-पहचानी</span> हैं?</h2>
     <ul class="pain">
       <li>
-        <svg class="pain-illustration" viewBox="0 0 320 150" aria-hidden="true">
-          <rect width="320" height="150" fill="#eaf4ea"/>
-          <rect x="62" y="28" width="196" height="94" rx="14" fill="#fff" stroke="#c5ddc8" stroke-width="3"/>
-          <circle cx="112" cy="73" r="27" fill="#d8ead9"/>
-          <text x="112" y="84" text-anchor="middle" font-size="34" font-weight="800" fill="#43875b">₹</text>
-          <path d="M157 57h70M157 75h55" stroke="#43875b" stroke-width="7" stroke-linecap="round"/>
-          <path d="M157 96h26m12 0h32" stroke="#b9d8bd" stroke-width="7" stroke-linecap="round"/>
-        </svg>
+        <img class="pain-photo" src="assets/monthly-budget-pressure.png" alt="A man reviewing household expenses and bills">
         <div class="pain-copy"><h3>महीने के अंत में budget tight हो जाता है?</h3><p>खर्चों के बाद बचत करना मुश्किल लगे तो आगे की योजना बनाना चुनौती हो सकता है।</p></div>
       </li>
       <li>
-        <svg class="pain-illustration" viewBox="0 0 320 150" aria-hidden="true">
-          <rect width="320" height="150" fill="#f1f5e9"/>
-          <path d="m54 73 106-45 106 45" fill="none" stroke="#6b8e4e" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M75 70v57h170V70" fill="#fff" stroke="#c5d9bb" stroke-width="4"/>
-          <circle cx="120" cy="82" r="13" fill="#6b8e4e"/>
-          <circle cx="200" cy="82" r="13" fill="#6b8e4e"/>
-          <circle cx="160" cy="91" r="11" fill="#9bbd87"/>
-          <path d="M99 126c2-20 9-30 21-30s19 10 21 30m38 0c2-20 9-30 21-30s19 10 21 30m-78 0c1-16 7-24 17-24s16 8 17 24" fill="#9bbd87"/>
-        </svg>
+        <img class="pain-photo" src="assets/family-responsibility-pressure.png" alt="A man thinking about expenses while his parents talk in the background">
         <div class="pain-copy"><h3>घर की जिम्मेदारियाँ भारी लगती हैं?</h3><p>परिवार की अपेक्षाओं और अपनी योजनाओं के बीच संतुलन बनाना आसान नहीं होता।</p></div>
-      </li>
-      <li>
-        <svg class="pain-illustration" viewBox="0 0 320 150" aria-hidden="true">
-          <rect width="320" height="150" fill="#eaf2f4"/>
-          <rect x="57" y="33" width="132" height="79" rx="9" fill="#fff" stroke="#b9d8c0" stroke-width="4"/>
-          <rect x="69" y="45" width="108" height="55" rx="4" fill="#dbe9df"/>
-          <path d="M123 112v14m-29 0h58" stroke="#43875b" stroke-width="7" stroke-linecap="round"/>
-          <rect x="218" y="78" width="59" height="43" rx="7" fill="#43875b"/>
-          <path d="M232 78V67a16 16 0 0 1 32 0v11m-59 31h59" fill="none" stroke="#6b8e4e" stroke-width="7" stroke-linecap="round"/>
-          <circle cx="246" cy="98" r="3" fill="#fff"/>
-          <circle cx="262" cy="98" r="3" fill="#fff"/>
-        </svg>
-        <div class="pain-copy"><h3>काम का routine बदलता नहीं?</h3><p>एक जैसा काम और growth के कम मौके आगे का रास्ता सोचने पर मजबूर कर सकते हैं।</p></div>
-      </li>
-      <li>
-        <svg class="pain-illustration" viewBox="0 0 320 150" aria-hidden="true">
-          <rect width="320" height="150" fill="#eef2f8"/>
-          <circle cx="74" cy="62" r="18" fill="#9bbdce"/>
-          <path d="M45 127c2-27 12-41 29-41s27 14 29 41" fill="#7099ac"/>
-          <circle cx="177" cy="52" r="19" fill="#b8cfb9"/>
-          <path d="M146 127c2-34 13-54 31-54s29 20 31 54" fill="#6b8e72"/>
-          <circle cx="254" cy="64" r="18" fill="#d4c7a8"/>
-          <path d="M224 127c2-28 12-42 30-42s28 14 30 42" fill="#aa9364"/>
-          <path d="M111 43h28m-14-14v28" stroke="#43875b" stroke-width="5" stroke-linecap="round"/>
-        </svg>
-        <div class="pain-copy"><h3>दोस्तों की progress देखकर तुलना होती है?</h3><p>दूसरों की उपलब्धियाँ देखकर अपनी दिशा को लेकर सवाल उठना आम है।</p></div>
       </li>
     </ul>
   </div>
