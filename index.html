@@ -13,9 +13,16 @@
   .hero h1{font-size:clamp(24px,5.4vw,38px);line-height:1.35;font-weight:800;margin-bottom:18px}
   .hl{background:linear-gradient(90deg,#c8102e,#e63946);-webkit-background-clip:text;background-clip:text;color:transparent}
   .hero p.sub{font-size:clamp(16px,3.6vw,19px);color:#555555;margin-bottom:26px}
-  .cta{display:inline-block;background:linear-gradient(90deg,#c8102e,#e63946);color:#fff;font-size:19px;font-weight:800;padding:17px 42px;border-radius:50px;text-decoration:none;box-shadow:0 8px 30px rgba(200,16,46,.25);transition:.2s}
-  .cta:hover{transform:translateY(-2px);box-shadow:0 12px 38px rgba(200,16,46,.35)}
-  .cta small{display:block;font-size:12px;font-weight:500;opacity:.9;margin-top:3px}
+  .purchase-offer{max-width:640px;margin:18px auto 0}
+  .purchase-price{display:flex;align-items:baseline;justify-content:center;gap:14px;margin-bottom:8px;line-height:1.15}
+  .purchase-price .current{font-size:clamp(36px,8vw,48px);font-weight:900;color:#111}
+  .purchase-price .original{font-size:clamp(20px,5vw,25px);color:#111}
+  .purchase-price .discount{font-size:clamp(24px,6vw,32px);font-weight:900;color:#20a51b}
+  .cta{display:block;width:100%;max-width:455px;margin:0 auto;background:linear-gradient(180deg,#68ad45,#247f08);color:#fff;font-size:22px;font-weight:800;padding:17px 20px;border-radius:15px;text-decoration:none;box-shadow:0 7px 18px rgba(35,100,15,.35);transition:.2s}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(35,100,15,.4)}
+  .cta small{display:block;font-size:18px;font-weight:700;margin-top:2px}
+  .offer-details{display:flex;justify-content:center;flex-wrap:wrap;gap:3px;margin:18px auto 0}
+  .offer-details span{background:#e2f0ff;color:#111;font-size:15px;font-weight:700;line-height:1.35;padding:3px 7px}
   section{padding:42px 0;border-top:1px solid #e8e8e8}
   h2{font-size:clamp(21px,4.4vw,28px);font-weight:800;margin-bottom:22px;text-align:center;line-height:1.4}
   h2 span{color:#e63946}
@@ -114,22 +121,22 @@
     left:0;
     right:0;
     background:linear-gradient(90deg,#ffffff 0%,#f5f1e8 50%,#ffffff 100%);
-    border-top:2px solid #c8102e;
+    border-top:2px solid #247f08;
     padding:12px 16px;
     text-align:center;
     z-index:9999;
-    box-shadow:0 -8px 30px rgba(200,16,46,.15);
+    box-shadow:0 -8px 30px rgba(35,100,15,.15);
   }
   .sticky-cta .pulse-btn {
     display:inline-block;
-    background:linear-gradient(90deg,#c8102e,#e63946);
+    background:linear-gradient(180deg,#68ad45,#247f08);
     color:#fff;
     font-size:18px;
     font-weight:900;
-    padding:16px 36px;
-    border-radius:50px;
+    padding:13px 28px;
+    border-radius:14px;
     text-decoration:none;
-    box-shadow:0 0 0 0 rgba(200,16,46,.4);
+    box-shadow:0 0 0 0 rgba(35,100,15,.4);
     animation:pulse 1.6s infinite;
     letter-spacing:.3px;
   }
@@ -137,15 +144,15 @@
   .sticky-cta .subtext {
     display:block;
     font-size:12px;
-    color:#b8860b;
+    color:#247f08;
     margin-top:6px;
     font-weight:700;
     animation:blink 1.8s infinite;
   }
   @keyframes pulse {
-    0%{box-shadow:0 0 0 0 rgba(200,16,46,.4)}
-    70%{box-shadow:0 0 0 16px rgba(200,16,46,0)}
-    100%{box-shadow:0 0 0 0 rgba(200,16,46,0)}
+    0%{box-shadow:0 0 0 0 rgba(35,100,15,.4)}
+    70%{box-shadow:0 0 0 16px rgba(35,100,15,0)}
+    100%{box-shadow:0 0 0 0 rgba(35,100,15,0)}
   }
   @keyframes blink {
     0%,100%{opacity:1}
@@ -186,7 +193,20 @@
     <!-- Image Placeholder 1: Hero Visual -->
     <img class="cfg-img" data-key="hero" alt="Primary Image 1">
 
-    <a href="#join" class="cta" data-cta>अभी ₹199 में सिस्टम एक्सेस करो<small>तुरंत शुरू • कोई हिडन चार्ज नहीं</small></a>
+    <div class="purchase-offer">
+      <div class="purchase-price">
+        <span class="current">₹199</span>
+        <span class="original"><s>₹1,999</s></span>
+        <span class="discount">90% off</span>
+      </div>
+      <a href="#join" class="cta" data-cta>☁ Get Your Copy Now!<small>In English And Hindi</small></a>
+      <div class="offer-details">
+        <span>📄 8 Modules</span>
+        <span>📄 150+ Pages</span>
+        <span>🌐 English / हिंदी</span>
+        <span>★★★★★ 40,210+ Reviews</span>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -299,6 +319,30 @@
       </ul>
     </div>
 
+    <div class="module">
+      <h3>MODULE 6: प्रोफ़ाइल और पहला इम्प्रेशन</h3>
+      <ul>
+        <li>एक स्पष्ट और ईमानदार ऑनलाइन प्रोफ़ाइल तैयार करना</li>
+        <li>निजी जानकारी सुरक्षित रखते हुए अपनी रुचियाँ दिखाना</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <h3>MODULE 7: वीडियो कॉल की तैयारी</h3>
+      <ul>
+        <li>कॉल से पहले तकनीक, समय और बातचीत की अपेक्षाएँ तय करना</li>
+        <li>सहमति, सहजता और स्पष्ट सीमाओं के साथ बातचीत करना</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <h3>MODULE 8: निरंतरता और व्यक्तिगत सुरक्षा</h3>
+      <ul>
+        <li>शेड्यूल, फॉलो-अप और भुगतान का व्यवस्थित रिकॉर्ड रखना</li>
+        <li>गोपनीयता बनाए रखना और संदिग्ध अनुरोधों से बचना</li>
+      </ul>
+    </div>
+
     <p style="text-align:center;font-weight:800;color:#c8102e;margin:26px 0 14px;font-size:17px">🎁 और ये BONUSES भी:</p>
     <div class="bonus"><b>BONUS 1:</b> WhatsApp + Telegram Script Pack — 20+ टेम्पलेट्स (English + Russian ट्रांसलिटरेशन)</div>
     <div class="bonus"><b>BONUS 2:</b> Cultural Cheat Sheet — Russian/Ukrainian रीति-रिवाज, गिफ्ट एटिकेट, वर्जित विषय</div>
@@ -307,7 +351,7 @@
     <!-- Lower portion: Explicit about PDFs & Modules for liability -->
     <div style="margin-top:32px;background:#f5f5f5;border-radius:12px;padding:20px;border:1px solid #d8d8d8">
       <p style="font-weight:700;color:#b8860b;margin-bottom:10px">आपको क्या मिलेगा (डिटेल में):</p>
-      <p style="font-size:14.5px;color:#333333">• 5 डिटेल्ड Modules (PDF फॉर्मेट में)<br>
+      <p style="font-size:14.5px;color:#333333">• 8 डिटेल्ड Modules (PDF फॉर्मेट में)<br>
       • WhatsApp/Telegram Script Pack (PDF)<br>
       • Cultural Cheat Sheet (PDF)<br>
       • Red-Flag Detector (PDF)<br>
@@ -349,7 +393,20 @@
     <div class="urgency">⚠️ ₹199 का ऑफर सिर्फ सीमित समय के लिए — आज ही खत्म हो सकता है</div>
     <h2>50,000+ लोगों की Life बदली…<br><span>अब तुम्हारी बारी है!</span></h2>
     <p style="color:#555555;margin-bottom:26px;font-size:16px">₹199 में Elite Companion System एक्सेस करो। 90% छूट।<br>तुरंत शुरू • पूरा सिस्टम + Bonuses</p>
-    <a href="#" class="cta" data-cta>अभी Join करो — ₹199<small>तुरंत एक्सेस • कोई हिडन चार्ज नहीं</small></a>
+    <div class="purchase-offer">
+      <div class="purchase-price">
+        <span class="current">₹199</span>
+        <span class="original"><s>₹1,999</s></span>
+        <span class="discount">90% off</span>
+      </div>
+      <a href="#" class="cta" data-cta>☁ Get Your Copy Now!<small>In English And Hindi</small></a>
+      <div class="offer-details">
+        <span>📄 8 Modules</span>
+        <span>📄 150+ Pages</span>
+        <span>🌐 English / हिंदी</span>
+        <span>★★★★★ 40,210+ Reviews</span>
+      </div>
+    </div>
     <div class="boxes">
       <span>🔒 100% सिक्योर पेमेंट</span>
       <span>⚡ इंस्टेंट एक्सेस</span>
@@ -375,8 +432,8 @@
 
 <!-- Sticky Pulsing Join Button -->
 <div class="sticky-cta">
-  <a href="#" class="pulse-btn" data-cta>अभी ₹199 में Join करो</a>
-  <span class="subtext">⚠️ ऑफर सीमित समय के लिए • आज ही खत्म हो सकता है</span>
+  <a href="#" class="pulse-btn" data-cta>Get Your Copy Now! · ₹199</a>
+  <span class="subtext">In English And Hindi</span>
 </div>
 
 <script>
