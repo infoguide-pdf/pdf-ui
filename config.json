@@ -1,5 +1,17 @@
 {
   "ctaUrl": "https://superprofile.bio/dummy-link",
+  "salesTicker": {
+    "label": "हाल की खरीदारी",
+    "subLabel": "सभी चैनल",
+    "items": [],
+    "itemTemplate": {
+      "name": "Initials or consented display name",
+      "city": "City",
+      "amount": "₹199",
+      "channel": "Source channel",
+      "date": "DD Mon YYYY"
+    }
+  },
   "images": {
     "hero": {
       "src": "https://lh3.googleusercontent.com/d/1DLmfII-5Y5pyXeo4uC_anouYe9wuvkb3",

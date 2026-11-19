@@ -12,6 +12,23 @@
   body{font-family:'Noto Sans Devanagari','Segoe UI',system-ui,sans-serif;background:#ffffff;color:#1a1a1a;line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:100px}
   .wrap{max-width:780px;margin:0 auto;padding:0 18px}
   .topbar{background:linear-gradient(90deg,#256b47,#43875b);color:#fff;text-align:center;padding:11px 10px;font-size:15px;font-weight:700;letter-spacing:.2px}
+  .sales-ticker{overflow:hidden;background:linear-gradient(105deg,#123f2a,#236b42 52%,#123f2a);color:#fff;border-bottom:1px solid #d5e7d8;box-shadow:0 5px 16px rgba(18,63,42,.16)}
+  .sales-ticker[hidden]{display:none}
+  .sales-ticker__inner{max-width:1160px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;gap:16px}
+  .sales-ticker__label{flex:0 0 auto;display:flex;align-items:center;gap:8px;color:#f4df9b;font-size:12px;font-weight:900;letter-spacing:.07em;white-space:nowrap}
+  .sales-ticker__spark{font-size:19px;line-height:1;text-shadow:0 0 12px rgba(255,235,166,.8)}
+  .sales-ticker__label-text{display:grid;gap:2px;line-height:1.15}
+  .sales-ticker__sub-label{color:#d4ead9;font-size:9px;font-weight:700;letter-spacing:.08em}
+  .sales-ticker__viewport{flex:1;min-width:0;overflow:hidden}
+  .sales-ticker__track{display:flex;width:max-content;animation:sales-ticker-scroll 30s linear infinite}
+  .sales-ticker__group{width:max-content;min-width:max(220px,min(900px,calc(100vw - 240px)));display:flex;align-items:center;justify-content:space-around;gap:12px;padding:0 10px}
+  .sales-ticker__item{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.12);box-shadow:inset 0 1px rgba(255,255,255,.14);font-size:12px;line-height:1.35;white-space:nowrap}
+  .sales-ticker__item>:not(:first-child)::before{content:"•";color:#c4dfca;margin-right:8px}
+  .sales-ticker__name{font-weight:800}
+  .sales-ticker__amount{color:#ffe49b;font-weight:900}
+  .sales-ticker__channel,.sales-ticker__date{color:#e4f2e7}
+  @keyframes sales-ticker-scroll{to{transform:translateX(-50%)}}
+  .sales-ticker:hover .sales-ticker__track,.sales-ticker:focus-within .sales-ticker__track{animation-play-state:paused}
   .hero{padding:46px 0 38px;text-align:center;background:linear-gradient(135deg,#eff6ef 0%,#ffffff 75%)}
   .hero h1{font-size:clamp(24px,5.4vw,38px);line-height:1.35;font-weight:800;margin-bottom:18px}
   .hl{background:linear-gradient(90deg,#256b47,#4b9563);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -110,12 +127,27 @@
     .sticky-cta .price{font-size:24px}
     .sticky-cta .price s{font-size:13px;margin-left:4px}
     .sticky-cta .pulse-btn{font-size:14px;padding:12px 16px}
+    .sales-ticker__inner{padding:9px 12px;gap:10px}
+    .sales-ticker__label{font-size:10px;letter-spacing:.04em}
+    .sales-ticker__sub-label{font-size:8px}
+    .sales-ticker__spark{font-size:16px}
+    .sales-ticker__item{gap:6px;padding:6px 9px;font-size:11px}
+    .sales-ticker__group{min-width:max(220px,min(900px,calc(100vw - 160px)));gap:8px}
   }
+  @media (prefers-reduced-motion:reduce){.sales-ticker__track{animation:none}.sales-ticker__viewport{overflow-x:auto}}
 </style>
 </head>
 <body>
 
 <div class="topbar">8 modules • English और हिंदी • डिजिटल गाइड • ₹199</div>
+<div class="sales-ticker" id="sales-ticker" role="region" aria-label="Recent purchase updates" aria-live="off" tabindex="0" hidden>
+  <div class="sales-ticker__inner">
+    <div class="sales-ticker__label"><span class="sales-ticker__spark" aria-hidden="true">✦</span><span class="sales-ticker__label-text"><span id="sales-ticker-label">हाल की खरीदारी</span><small class="sales-ticker__sub-label" id="sales-ticker-sub-label">सभी चैनल</small></span></div>
+    <div class="sales-ticker__viewport">
+      <div class="sales-ticker__track" id="sales-ticker-track"></div>
+    </div>
+  </div>
+</div>
 
 <div class="hero">
   <div class="wrap">
@@ -378,6 +410,57 @@
 </div>
 
 <script>
+function renderSalesTicker(config) {
+  if (!config) return;
+  const ticker = document.getElementById('sales-ticker');
+  if (!Array.isArray(config.items)) {
+    console.error('config.json: salesTicker.items must be an array.');
+    return;
+  }
+  const items = config.items.filter(item => {
+    const requiredFields = ['name', 'city', 'amount', 'channel', 'date'];
+    const valid = item && requiredFields.every(field => typeof item[field] === 'string' && item[field].trim());
+    if (!valid) console.error('config.json: each salesTicker item needs name, city, amount, channel, and date.', item);
+    return valid;
+  });
+  if (!items.length) return;
+
+  document.getElementById('sales-ticker-label').textContent = config.label || 'RECENT PURCHASES';
+  document.getElementById('sales-ticker-sub-label').textContent = config.subLabel || 'ALL CHANNELS';
+  const track = document.getElementById('sales-ticker-track');
+  const createGroup = (isDuplicate = false) => {
+    const group = document.createElement('div');
+    group.className = 'sales-ticker__group';
+    group.setAttribute('role', 'list');
+    if (isDuplicate) group.setAttribute('aria-hidden', 'true');
+    items.forEach(item => {
+      const entry = document.createElement('span');
+      entry.className = 'sales-ticker__item';
+      entry.setAttribute('role', 'listitem');
+      const name = document.createElement('span');
+      name.className = 'sales-ticker__name';
+      name.textContent = item.name.trim();
+      const city = document.createElement('span');
+      city.textContent = item.city.trim();
+      const amount = document.createElement('strong');
+      amount.className = 'sales-ticker__amount';
+      amount.textContent = item.amount.trim();
+      const channel = document.createElement('span');
+      channel.className = 'sales-ticker__channel';
+      channel.textContent = `via ${item.channel.trim()}`;
+      const date = document.createElement('span');
+      date.className = 'sales-ticker__date';
+      date.textContent = item.date.trim();
+      entry.append(name, city, amount, channel, date);
+      group.appendChild(entry);
+    });
+    return group;
+  };
+  track.append(createGroup(), createGroup(true));
+  ticker.hidden = false;
+  track.style.animationDuration = `${Math.max(18, Math.round(track.scrollWidth / 55))}s`;
+}
+
 fetch('config.json')
   .then(response => {
     if (!response.ok) throw new Error(`Failed to load page configuration: ${response.status}`);
@@ -387,6 +470,7 @@ fetch('config.json')
     if (cfg.ctaUrl) {
       document.querySelectorAll('a[data-cta]').forEach(a => { a.href = cfg.ctaUrl; });
     }
+    renderSalesTicker(cfg.salesTicker);
     document.querySelectorAll('img[data-key]').forEach(el => {
       const entry = (cfg.images || {})[el.dataset.key];
       if (!entry) return;
