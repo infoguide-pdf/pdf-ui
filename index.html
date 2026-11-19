@@ -71,11 +71,14 @@
   .faq details{background:#f4f8f4;border:1px solid #d7e5d9;border-radius:12px;padding:15px 18px}
   .faq summary{color:#256b47;font-weight:800;cursor:pointer}
   .faq p{margin:12px 0 0;color:#444}
-  .guide-toast{position:fixed;top:16px;right:16px;z-index:9998;width:min(320px,calc(100vw - 32px));padding:14px 42px 14px 16px;background:#fff;border:1px solid #d7e5d9;border-left:4px solid #43875b;border-radius:12px;box-shadow:0 8px 24px rgba(21,62,38,.16);opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .25s ease,transform .25s ease}
-  .guide-toast.show{opacity:1;transform:translateY(0);pointer-events:auto}
-  .guide-toast strong{display:block;color:#256b47;font-size:13px;margin-bottom:3px}
-  .guide-toast p{font-size:13px;line-height:1.5;color:#333}
-  .guide-toast button{position:absolute;top:7px;right:8px;border:0;background:transparent;color:#555;font-size:22px;line-height:1;cursor:pointer;padding:4px}
+  .guide-marquee{overflow:hidden;background:linear-gradient(90deg,#edf5ee,#fff 50%,#edf5ee);border-bottom:1px solid #d7e5d9}
+  .marquee-track{display:flex;width:max-content;animation:guide-scroll 36s linear infinite}
+  .guide-marquee:hover .marquee-track{animation-play-state:paused}
+  .marquee-group{display:flex;flex:none;align-items:center;gap:12px;padding:10px 6px}
+  .marquee-group span{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;padding:7px 15px;border:1px solid #d7e5d9;border-radius:999px;background:#fff;color:#245a3c;font-size:14px;font-weight:700;box-shadow:0 3px 10px rgba(21,62,38,.07)}
+  .marquee-group span::before{content:"";width:8px;height:8px;flex:0 0 8px;border-radius:50%;background:linear-gradient(135deg,#68ad45,#247f08)}
+  @keyframes guide-scroll{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
 
   /* Sticky Pulsing CTA */
   .sticky-cta {
@@ -115,17 +118,29 @@
     .sticky-cta .price{font-size:24px}
     .sticky-cta .price s{font-size:13px;margin-left:4px}
     .sticky-cta .pulse-btn{font-size:14px;padding:12px 16px}
-    .guide-toast{top:10px;right:10px}
   }
 </style>
 </head>
 <body>
 
 <div class="topbar">8 modules • English और हिंदी • डिजिटल गाइड • ₹199</div>
-<div class="guide-toast" id="guideToast" role="status" aria-live="polite" aria-atomic="true">
-  <strong>Guide information</strong>
-  <p id="guideToastText"></p>
-  <button type="button" id="guideToastClose" aria-label="Close guide information">×</button>
+<div class="guide-marquee" role="region" aria-label="Guide highlights">
+  <div class="marquee-track">
+    <div class="marquee-group">
+      <span>8 Modules</span>
+      <span>English / हिंदी</span>
+      <span>Conversation scripts</span>
+      <span>Boundaries and consent</span>
+      <span>Safety and privacy checklists</span>
+    </div>
+    <div class="marquee-group" aria-hidden="true">
+      <span>8 Modules</span>
+      <span>English / हिंदी</span>
+      <span>Conversation scripts</span>
+      <span>Boundaries and consent</span>
+      <span>Safety and privacy checklists</span>
+    </div>
+  </div>
 </div>
 
 <div class="hero">
@@ -421,31 +436,6 @@ fetch('config.json')
     });
   });
 
-const guideNotes = [
-  "आठ modules में communication, boundaries और safety शामिल हैं।",
-  "Guide English और Hindi में उपलब्ध है।",
-  "इसमें scripts और practical checklists शामिल हैं।",
-  "Profile, payment safety और online privacy पर भी guidance शामिल है।"
-];
-const guideToast = document.getElementById('guideToast');
-const guideToastText = document.getElementById('guideToastText');
-let nextGuideNote = 0;
-let guideToastDismissed = false;
-
-function showGuideNote() {
-  if (guideToastDismissed) return;
-  guideToastText.textContent = guideNotes[nextGuideNote];
-  nextGuideNote = (nextGuideNote + 1) % guideNotes.length;
-  guideToast.classList.add('show');
-  window.setTimeout(() => guideToast.classList.remove('show'), 5500);
-}
-
-document.getElementById('guideToastClose').addEventListener('click', () => {
-  guideToastDismissed = true;
-  guideToast.classList.remove('show');
-});
-window.setTimeout(showGuideNote, 4500);
-window.setInterval(showGuideNote, 18000);
 </script>
 
 </body>
